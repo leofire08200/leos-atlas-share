@@ -16,7 +16,7 @@ export function renderTripMap() {
 function script(src) {return new Promise((resolve,reject)=>{const node=document.createElement('script');node.src=src;node.onload=resolve;node.onerror=reject;document.head.append(node);});}
 let libraries;
 async function loadLibraries() {
-  if(!libraries)libraries=Promise.all([import(new URL('vendor/maplibre-gl.mjs',mapAssetsBase).href),script(new URL('vendor/pmtiles.js',mapAssetsBase).href)]);
+  if(!libraries)libraries=Promise.all([import(new URL('vendor/maplibre-gl.mjs',mapAssetsBase).href).catch(e=>{throw Error('MAPLIBRE IMPORT FAILED: '+(e?.message||e))}),script(new URL('vendor/pmtiles.js',mapAssetsBase).href).catch(e=>{throw Error('PMTILES SCRIPT FAILED: '+(e?.message||e))})]);
   const [maplibregl] = await libraries;
   if(!document.querySelector('[data-maplibre-css]')){const link=document.createElement('link');link.rel='stylesheet';link.href=new URL('vendor/maplibre-gl.css',mapAssetsBase).href;link.dataset.maplibreCss='';document.head.append(link);}
   return {maplibregl,pmtiles:globalThis.pmtiles};
@@ -27,7 +27,7 @@ export async function createLocalMap(container,config=MapProvider) {
   if(!sources.length)return null;
   if(sources.some(s=>!/^maps\/[a-zA-Z0-9_-]+\.pmtiles$/.test(s.path)))throw Error('Only local PMTiles allowed');
   const {maplibregl,pmtiles}=await loadLibraries();
-  const {layers,LIGHT,DARK}=await import(new URL('vendor/basemaps.mjs',mapAssetsBase).href);
+  const {layers,LIGHT,DARK}=await import(new URL('vendor/basemaps.mjs',mapAssetsBase).href).catch(e=>{throw Error('BASEMAPS IMPORT FAILED: '+(e?.message||e))});
   if(!createLocalMap.protocol){createLocalMap.protocol=new pmtiles.Protocol();maplibregl.addProtocol('pmtiles',createLocalMap.protocol.tile);}
   // Probe independently: an unavailable archive must not disable the other region.
   const ready=await Promise.allSettled(sources.map(async source=>{
