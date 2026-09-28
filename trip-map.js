@@ -120,7 +120,7 @@ export function mountTripMap(root,bundle) {
         themeObserver=new MutationObserver(()=>{if(instance&&!disposed){instance.applyTheme();routePaint();}});
         themeObserver.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
       });
-    }).catch(()=>{if(!disposed)fallback();});
+    }).catch(error=>{if(!disposed){fallback();status.textContent='MAP DEBUG: '+(error?.stack||error?.message||String(error));}});
   }
   return ()=>{disposed=true;resizeObserver?.disconnect();themeObserver?.disconnect();cancelAnimationFrame(resizeFrame);root.removeEventListener('click',click);markers.forEach(m=>m.remove());instance?.map.remove();};
 }
