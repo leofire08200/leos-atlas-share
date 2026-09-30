@@ -14,7 +14,7 @@
 
 .essentials-section{margin:36px 0 54px}.essentials-section>h2{font-size:27px;letter-spacing:.02em;padding-bottom:15px;border-bottom:1px solid var(--line);margin-bottom:12px}.essentials-section>.muted{font-size:12px;margin-bottom:28px}
 .place-thumbnail{display:block;border:0;background:none;padding:0;margin:12px 0;width:120px;cursor:zoom-in}.place-thumbnail img{display:block;width:120px;height:78px;object-fit:cover;border-radius:3px}.place-image-dialog{border:0;padding:18px;background:var(--paper);max-width:92vw;max-height:90vh}.place-image-dialog::backdrop{background:#20251ed9}.place-image-dialog img{display:block;max-width:85vw;max-height:75vh;object-fit:contain;margin-top:12px}
-.trip-map-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}.trip-map-filters [aria-pressed="true"]{background:var(--accent-muted);border-color:#758369}.trip-map-canvas{height:420px;position:relative;border:1px solid var(--line);background:var(--map-surround)}.trip-map-fallback{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:28px;gap:18px}.trip-map-fallback[hidden]{display:none}.trip-map-fallback h2{font-size:25px}.trip-map-fallback p{max-width:430px}.trip-map-host.maplibregl-map{position:absolute;inset:0}.trip-map-status{font-size:12px;margin:18px 0}.trip-map-place{display:flex;justify-content:space-between;gap:20px;align-items:center;text-align:left;width:100%;min-height:52px;padding:16px 0;border:0;border-top:1px solid var(--line);background:none;font-size:14px}.trip-map-marker{width:24px;height:24px;min-width:24px;min-height:24px;padding:0;box-sizing:border-box;flex:0 0 24px;aspect-ratio:1/1;border:3px solid white;background:#637958;border-radius:50%;cursor:pointer}.trip-map-detail .place-row{margin-bottom:20px}
+.trip-map-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}.trip-map-filters [aria-pressed="true"]{background:var(--accent-muted);border-color:#758369}.trip-map-canvas{height:420px;position:relative;border:1px solid var(--line);background:var(--map-surround)}.trip-map-fallback{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:28px;gap:18px}.trip-map-fallback[hidden]{display:none}.trip-map-fallback h2{font-size:25px}.trip-map-fallback p{max-width:430px}.trip-map-host.maplibregl-map{position:absolute;inset:0}.trip-map-status{font-size:12px;margin:18px 0}.trip-map-place{display:flex;justify-content:space-between;gap:20px;align-items:center;text-align:left;width:100%;min-height:52px;padding:16px 0;border:0;border-top:1px solid var(--line);background:none;font-size:14px}.trip-map-marker{width:24px;height:24px;border:3px solid white;background:#637958;border-radius:50%;cursor:pointer}.trip-map-detail .place-row{margin-bottom:20px}
 @media(max-width:700px){.essentials-section>h2{font-size:24px}.trip-map-filters{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.trip-map-filters button{padding:10px 5px;font-size:11px}.trip-map-canvas{height:300px}.place-thumbnail,.place-thumbnail img{width:100px}.place-thumbnail img{height:66px}}
 
 .trip-map-marker--accommodation{border-radius:5px;background:#8a7865}
@@ -165,7 +165,6 @@ button,summary{touch-action:manipulation}
   .share-cover{margin-top:18px}.share-cover .destination-slot{height:170px}.share-body #itinerary,.share-body #prepare{margin-top:28px}
   .trip-map-filters .outline-button{min-height:44px;padding:8px 13px;font-size:12px}
 }
-
 @media(max-width:350px){.theme-control>span[aria-hidden]{display:none}.topline>span:first-child{font-size:8px}.trip-context h1{font-size:23px}.day-disclosure .activity{grid-template-columns:49px minmax(0,1fr);gap:8px}.archive-trip{grid-template-columns:64px minmax(0,1fr);gap:11px}}
 .trip-photograph{display:block;width:100%;height:auto;aspect-ratio:var(--photo-ratio);object-fit:cover;border-radius:3px;margin:14px 0;max-height:340px}
 .activity .trip-photograph{width:min(100%,var(--photo-width))}
@@ -175,5 +174,214 @@ button,summary{touch-action:manipulation}
 .trip-image-slot .trip-photograph{width:100%;height:100%;margin:0;object-fit:cover;border-radius:inherit}
 .trip-route-caption{font-size:12px;line-height:1.7;margin-top:12px}
 
-/* Keep the reviewed mobile readability override last in the cascade. */
-@media(max-width:700px){.topline>span:first-child{font-size:11px}.theme-control{font-size:13px}.archive-trip p{font-size:13px}.archive-trip .status{font-size:12px}.trip-context .trip-meta{font-size:13px}.trip-context .trip-meta .status{font-size:12px}.trip-cover .eyebrow{font-size:11px}.tabs a{font-size:14px}.trip-stats span{font-size:13px}.day-disclosure .day-title h3{font-size:15px}.day-count{font-size:13px}.day-date{font-size:13px}.activity-meta{font-size:13px}.sidebar nav a{font-size:12px}.share-header .share-badge{font-size:12px}.trip-map-filters .outline-button{font-size:13px}.trip-map-status,.trip-route-caption{font-size:13px}}
+/* Uniform itinerary-only crop; trim the thin border embedded in reviewed sources. */
+.activity .itinerary-photo-frame{display:block;width:min(100%,420px);aspect-ratio:3/2;overflow:hidden;border-radius:3px;margin:14px 0}
+.activity .itinerary-photo-frame .trip-photograph{display:block;width:100%;height:100%;max-width:none!important;max-height:none;aspect-ratio:auto;object-fit:cover;margin:0;border-radius:0;transform:scale(1.06)}
+
+/* ===== Leo's Atlas Concept V4 — approved visual direction ===== */
+:root{
+  --bg-primary:#f2efe7;--bg-secondary:#ebe7dc;--surface:#faf8f2;--surface-elevated:#f6f2e8;
+  --text-primary:#171b18;--text-secondary:#62665f;--text-muted:#81847d;--border:#d8d3c7;--border-strong:#c5c0b4;
+  --accent:#3f6657;--accent-muted:#dfe8e1;--interactive:#4f5752;--interactive-active:#21362e;--interactive-bg:#e3e8e1;--hover:#e9e5dc;
+  --status-warm-bg:#e9e3d4;--status-warm-text:#685c3f;--map-surround:#e8eee7;
+  --sidebar:218px;--radius:12px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+}
+:root[data-theme="dark"]{
+  --bg-primary:#0e1514;--bg-secondary:#121b1a;--surface:#17211f;--surface-elevated:#1c2825;
+  --text-primary:#f2f1eb;--text-secondary:#aeb7b1;--text-muted:#7f8b85;--border:#273330;--border-strong:#3a4944;
+  --accent:#9bbbaa;--accent-muted:#22362f;--interactive:#b7c2bc;--interactive-active:#eef5f0;--interactive-bg:#20302c;--hover:#1a2724;
+  --status-warm-bg:#302d24;--status-warm-text:#d8c9a3;--map-surround:#111c1a;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]):not([data-theme="dark"]){--bg-primary:#0e1514;--bg-secondary:#121b1a;--surface:#17211f;--surface-elevated:#1c2825;--text-primary:#f2f1eb;--text-secondary:#aeb7b1;--text-muted:#7f8b85;--border:#273330;--border-strong:#3a4944;--accent:#9bbbaa;--accent-muted:#22362f;--interactive:#b7c2bc;--interactive-active:#eef5f0;--interactive-bg:#20302c;--hover:#1a2724;--map-surround:#111c1a}}
+body{background:var(--bg-primary);font-size:16px}.sidebar{background:var(--bg-secondary);padding:34px 20px;box-shadow:1px 0 0 var(--border)}
+.brand{font-size:19px}.brand small{font-size:11px;margin-top:4px}.sidebar nav{margin-top:54px}.sidebar nav a{font-size:14px;padding:13px 14px;border-radius:10px}
+main{max-width:none;padding:0 clamp(34px,4vw,68px)}.topline{height:72px}.topline>span{font-size:10px}
+p{font-size:15px;line-height:1.65}h1{font-size:clamp(34px,3.2vw,54px);font-weight:700;letter-spacing:-2px}h2{font-size:28px;font-weight:700}.eyebrow{font-size:10px}
+/* Home: layered atlas canvas rather than an empty banner */
+.atlas-home-hero{min-height:360px;margin:0 calc(clamp(34px,4vw,68px)*-1);padding:58px clamp(34px,4vw,68px) 120px;border-bottom:0;background:var(--surface);position:relative}
+.atlas-home-hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 72% 42%,color-mix(in srgb,var(--accent) 18%,transparent) 0 2px,transparent 3px),linear-gradient(132deg,transparent 0 59%,color-mix(in srgb,var(--accent) 28%,transparent) 59.1% 59.25%,transparent 59.35%);opacity:.55;pointer-events:none}
+.atlas-home-hero:after{content:"";position:absolute;right:2%;top:7%;width:62%;height:86%;opacity:.24;background:repeating-radial-gradient(ellipse at 70% 45%,transparent 0 24px,color-mix(in srgb,var(--accent) 38%,transparent) 25px 26px,transparent 27px 39px);mask-image:linear-gradient(90deg,transparent,#000 30%,#000)}
+.atlas-home-hero>*{position:relative;z-index:1}.atlas-home-hero h1{font-size:clamp(42px,4vw,62px);line-height:1.12;margin:18px 0 14px}.atlas-home-hero>p:not(.eyebrow){font-size:16px}.atlas-motif{right:5%;bottom:22px;width:58%;height:190px;opacity:.75}
+.home-trips{max-width:1080px;margin-top:28px;padding-bottom:12px}.home-trips .section-label{font-size:15px;margin-bottom:12px}.archive-trip{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:10px 0;padding:12px;box-shadow:0 8px 24px color-mix(in srgb,#000 5%,transparent);grid-template-columns:140px 1fr auto 28px}.archive-trip .trip-image-slot{height:86px;border-radius:9px}.archive-trip h2{font-size:17px}.archive-trip p{font-size:12px}
+/* Trip hero: image is the atmosphere layer, text lives inside it. */
+.back-link{margin:22px 0 12px;font-size:13px}.trip-context{position:relative;overflow:hidden;border-radius:16px;background:var(--surface);border:1px solid var(--border);box-shadow:0 14px 38px color-mix(in srgb,#000 9%,transparent)}
+.trip-context .destination-slot{position:absolute;inset:0}.trip-context .destination-slot:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 22%,rgba(6,11,9,.08) 48%,rgba(6,11,9,.78) 100%)}
+.trip-context .destination-slot img,.trip-context .destination-slot .landscape{width:100%;height:100%;object-fit:cover}
+.trip-cover{height:clamp(380px,43vw,570px)}.trip-context-copy{position:absolute;z-index:2;left:clamp(24px,4vw,54px);right:clamp(24px,4vw,54px);bottom:clamp(24px,4vw,48px);color:white;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.trip-context-copy .eyebrow{color:rgba(255,255,255,.74)}.trip-context-copy h1{max-width:800px;font-size:clamp(36px,4.2vw,62px);line-height:1.06;margin:10px 0 14px}.trip-context-copy .trip-meta{font-size:14px;color:rgba(255,255,255,.9);gap:18px}.trip-context-copy .status{color:#f5f4ed;border-color:rgba(255,255,255,.4);background:rgba(22,37,31,.55);text-shadow:none}.share-text-link{display:inline-block;margin-top:16px;font-size:13px;color:white}
+/* Compact hero is still a real destination banner on itinerary/map/etc. */
+.trip-context-compact{height:190px;border-radius:14px}.trip-context-compact .trip-context-copy{bottom:22px}.trip-context-compact .trip-context-copy h1{font-size:30px;margin:4px 0 8px}.trip-context-compact .eyebrow{display:none}.trip-context-compact .trip-meta{font-size:12px}.trip-context-compact .status{padding:4px 8px}
+.tabs{margin:14px 0 22px;gap:32px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:0 18px;box-shadow:0 5px 18px color-mix(in srgb,#000 4%,transparent)}.tabs a{font-size:14px;padding:0 2px 13px;min-height:50px}
+.trip-stats{gap:10px;margin:0 0 22px}.trip-stats>div{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:17px 8px;box-shadow:0 5px 16px color-mix(in srgb,#000 4%,transparent)}.trip-stats strong{font-size:28px;font-weight:650}.trip-stats span{font-size:12px;margin-top:5px}
+.overview-story,.route-summary{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin:12px 0}.overview-story h2{font-size:25px;margin:10px 0}.route-summary h3{font-size:19px;margin:7px 0}.route-summary p{font-size:15px}
+/* Daily itinerary: compact structured surface, like approved concept */
+.section-label{font-size:11px}.day{margin:10px 0;border:1px solid var(--border);border-radius:12px;background:var(--surface);overflow:hidden;box-shadow:0 4px 16px color-mix(in srgb,#000 3%,transparent)}.day-title{padding:14px 18px;border:0;gap:14px;cursor:pointer}.day-num{font-size:24px;font-weight:650;color:var(--text-primary);min-width:38px}.day-date{font-size:12px}.day-title h3{font-size:15px;margin-top:2px}.day-count{font-size:12px;margin-left:auto}.day[open] .day-title{border-bottom:1px solid var(--border)}.timeline{margin:0 18px 14px 30px}.activity{padding:16px 0 7px 24px;grid-template-columns:58px minmax(0,1fr);gap:12px}.activity:before{top:22px;width:6px;height:6px}.activity time{font-size:12px}.activity h3{font-size:15px;margin:1px 0 4px}.activity-meta{font-size:11px}.activity p{font-size:12px}.activity .itinerary-photo-frame{width:min(100%,520px);margin:12px 0;aspect-ratio:16/9;border-radius:9px}
+.theme-control select{background:var(--surface);font-size:13px}
+footer{font-size:9px}
+@media(min-width:1200px){.trip-workspace{max-width:1380px}.trip-workspace .trip-cover,.trip-workspace .trip-context-compact,.trip-workspace .tabs,.trip-workspace>.trip-stats,.trip-workspace>.overview-story,.trip-workspace>.route-summary,.trip-workspace>.section-label,.trip-workspace>.day{max-width:1080px}.trip-workspace .trip-cover{max-width:1080px}.trip-workspace .trip-context-compact{max-width:1080px}}
+@media(max-width:700px){
+  :root{--radius:10px}.sidebar{background:var(--surface)}main{padding:0 14px}.topline{height:54px}.topline>span{display:none}
+  .atlas-home-hero{margin:0 -14px;min-height:320px;padding:34px 20px 100px}.atlas-home-hero h1{font-size:34px}.atlas-motif{width:115%;right:-32%;height:160px}.home-trips{margin-top:18px}.archive-trip{grid-template-columns:92px 1fr 20px;padding:9px}.archive-trip .trip-image-slot{height:66px}.archive-trip .status{display:none}
+  .back-link{margin-top:12px}.trip-cover{height:350px;border-radius:13px}.trip-context-copy{left:20px;right:20px;bottom:22px}.trip-context-copy h1{font-size:31px}.trip-context-copy .trip-meta{font-size:11px}.trip-context-compact{height:145px}.trip-context-compact .trip-context-copy h1{font-size:22px}.trip-context-compact .trip-meta{font-size:10px}
+  .tabs{margin:9px 0 14px;border-radius:10px;padding:0 12px;gap:23px}.tabs a{font-size:12px;min-height:44px;padding-bottom:10px}.trip-stats{gap:6px}.trip-stats>div{padding:12px 3px}.trip-stats strong{font-size:22px}.trip-stats span{font-size:10px}
+  .overview-story,.route-summary{padding:17px}.overview-story h2{font-size:20px}.day-title{padding:12px}.day-num{font-size:22px}.timeline{margin-left:20px;margin-right:10px}.activity{grid-template-columns:48px minmax(0,1fr);padding-left:18px}.activity .itinerary-photo-frame{width:100%;aspect-ratio:16/9}
+}
+
+/* ===== Leo's Atlas Concept V5 — strict A/B/C alignment ===== */
+:root{
+  --bg-primary:#f1eee6;--bg-secondary:#ebe7dd;--surface:#faf8f2;--surface-elevated:#f5f1e8;
+  --text-primary:#171a18;--text-secondary:#5f655f;--text-muted:#858981;--border:#d9d4c8;--border-strong:#c8c1b3;
+  --accent:#426554;--accent-muted:#dfe7df;--interactive:#505851;--interactive-active:#21352c;--interactive-bg:#e2e7df;--hover:#e9e5dc;
+  --map-surround:#e9eee7;--radius:10px;
+}
+:root[data-theme="dark"]{
+  --bg-primary:#101312;--bg-secondary:#151817;--surface:#1b1f1d;--surface-elevated:#222724;
+  --text-primary:#f1f0e9;--text-secondary:#b6b9b3;--text-muted:#858b86;--border:#303532;--border-strong:#474d49;
+  --accent:#9db5a6;--accent-muted:#27332d;--interactive:#c0c4bf;--interactive-active:#f2f4ef;--interactive-bg:#252d29;--hover:#202522;
+  --map-surround:#171b19;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]):not([data-theme="dark"]){
+  --bg-primary:#101312;--bg-secondary:#151817;--surface:#1b1f1d;--surface-elevated:#222724;
+  --text-primary:#f1f0e9;--text-secondary:#b6b9b3;--text-muted:#858b86;--border:#303532;--border-strong:#474d49;
+  --accent:#9db5a6;--accent-muted:#27332d;--interactive:#c0c4bf;--interactive-active:#f2f4ef;--interactive-bg:#252d29;--hover:#202522;--map-surround:#171b19;
+}}
+body{background:var(--bg-primary);font-size:15px}.sidebar{background:var(--bg-secondary)}
+main{padding-left:clamp(34px,4vw,64px);padding-right:clamp(34px,4vw,64px)}
+.trip-workspace{max-width:1240px!important}.trip-workspace>.back-link,.trip-workspace>.trip-context,.trip-workspace>.tabs,.trip-workspace>.trip-stats,.trip-workspace>.overview-story,.trip-workspace>.route-summary,.trip-workspace>.section-label,.trip-workspace>.day,.trip-workspace>.travel-prepare,.trip-workspace>.trip-map{width:min(100%,1040px);max-width:1040px!important;margin-left:auto;margin-right:auto}
+
+/* A — Home: actual atlas-like layered canvas, not an empty header. */
+.atlas-home-hero{min-height:390px;background:var(--surface);border:1px solid var(--border);border-radius:0 0 18px 18px;margin:0 calc(clamp(34px,4vw,64px)*-1);padding:62px clamp(44px,5vw,82px) 118px;overflow:hidden}
+.atlas-home-hero:before{background:radial-gradient(circle at 71% 52%,color-mix(in srgb,var(--accent) 65%,transparent) 0 2px,transparent 2.5px),linear-gradient(144deg,transparent 0 61%,color-mix(in srgb,var(--accent) 55%,transparent) 61.05% 61.18%,transparent 61.25%);opacity:.48}
+.atlas-home-hero:after{right:-2%;top:3%;width:66%;height:96%;opacity:.30;background:repeating-radial-gradient(ellipse at 70% 48%,transparent 0 27px,color-mix(in srgb,var(--accent) 36%,transparent) 28px 29px,transparent 30px 44px)}
+.atlas-home-hero h1{font-size:clamp(42px,3.6vw,58px);font-weight:700;letter-spacing:-2.3px;line-height:1.12}.atlas-home-hero>p:not(.eyebrow){font-size:15px}.atlas-motif{width:61%;right:3%;bottom:18px;height:205px;opacity:.7}
+.home-trips{max-width:1040px;margin:24px auto 0}.archive-trip{border-radius:10px;box-shadow:none;padding:10px;background:var(--surface);grid-template-columns:128px 1fr auto 24px}.archive-trip .trip-image-slot{height:78px}.archive-trip h2{font-size:16px}
+
+/* B — Overview: one photographic hero. No detached lower title slab. */
+.back-link{margin-top:16px!important;margin-bottom:10px!important}.trip-context{border-radius:12px;box-shadow:none;background:#171a18}.trip-cover{height:430px!important}.trip-context .destination-slot,.trip-context .destination-slot picture{position:absolute;inset:0;display:block;width:100%;height:100%}.trip-context .destination-slot picture img,.trip-context .destination-slot>img,.trip-context .destination-slot .trip-photograph-hero{display:block;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:center 48%;border-radius:0!important;margin:0!important}
+.trip-context .destination-slot:after{background:linear-gradient(180deg,rgba(0,0,0,.04) 10%,rgba(0,0,0,.08) 42%,rgba(4,8,6,.72) 100%)}
+.trip-context-copy{left:28px;right:28px;bottom:25px;text-shadow:0 2px 12px rgba(0,0,0,.34)}.trip-context-copy .eyebrow{display:none}.trip-context-copy h1{font-size:clamp(34px,3.2vw,48px);font-weight:700;letter-spacing:-1.7px;margin:0 0 8px;line-height:1.08}.trip-context-copy .trip-meta{font-size:13px;gap:14px}.share-text-link{font-size:12px;margin-top:10px}
+.tabs{height:54px;margin:0 auto 10px!important;border-radius:0 0 10px 10px;border-top:0;box-shadow:none;background:var(--surface);padding:0 18px;gap:30px}.tabs a{font-size:13px;min-height:54px;padding:0 1px 11px}
+.trip-stats{margin:0 auto 14px!important;gap:7px}.trip-stats>div{background:var(--surface-elevated);border:1px solid var(--border);border-radius:8px;padding:12px 6px;box-shadow:none}.trip-stats strong{font-size:24px;font-weight:650}.trip-stats span{font-size:11px;margin-top:3px}
+.overview-story{border:0;background:transparent;border-radius:0;box-shadow:none;padding:8px 2px 12px!important;margin-top:0!important}.overview-story h2{font-size:21px;line-height:1.4;margin:7px 0 8px}.overview-story>p:not(.eyebrow){font-size:13px;line-height:1.7;max-width:760px}.route-summary{border-radius:10px;box-shadow:none;padding:18px!important}
+
+/* C — Daily: shallow destination banner + dense itinerary, matching concept proportions. */
+.trip-context-compact{height:128px!important;border-radius:10px 10px 0 0;margin-bottom:0!important}.trip-context-compact .trip-context-copy{left:18px;bottom:14px}.trip-context-compact .trip-context-copy h1{font-size:21px;letter-spacing:-.5px;margin:0 0 4px}.trip-context-compact .trip-meta{font-size:10px;gap:10px}.trip-context-compact .share-text-link{display:none}.trip-context-compact+.tabs{border-radius:0 0 10px 10px}
+.section-label{margin:18px auto 7px!important;font-size:10px}.day{margin:6px auto!important;border-radius:8px;box-shadow:none;background:var(--surface)}.day-title{padding:10px 12px;gap:9px}.day-num{font-size:21px;min-width:36px}.day-date{font-size:11px;line-height:1.2}.day-title h3{font-size:13px;margin-top:2px;line-height:1.25}.day-count{font-size:10px}.timeline{margin:0 12px 8px 20px}.activity{grid-template-columns:52px minmax(0,1fr);gap:9px;padding:10px 0 4px 19px}.activity:before{top:16px;width:6px;height:6px}.activity time{font-size:10px}.activity h3{font-size:13px;line-height:1.3;margin:0 0 2px}.activity-meta{font-size:9px}.activity p{font-size:10px;line-height:1.45;margin-top:4px}.activity .itinerary-photo-frame{width:min(100%,390px);aspect-ratio:16/9;margin:7px 0 5px;border-radius:6px}.activity .itinerary-photo-frame .trip-photograph{transform:scale(1.025)}
+.day:not([open]) .day-title{min-height:48px}.day:not([open]){background:var(--surface)}
+
+/* Layering: restrained, not a field of green cards. */
+:root[data-theme="dark"] .trip-context,:root[data-theme="dark"] .tabs,:root[data-theme="dark"] .day,:root[data-theme="dark"] .archive-trip{background:#1a1e1c}:root[data-theme="dark"] .trip-stats>div{background:#202522}
+
+@media(max-width:700px){
+ main{padding:0 10px}.trip-workspace>.back-link,.trip-workspace>.trip-context,.trip-workspace>.tabs,.trip-workspace>.trip-stats,.trip-workspace>.overview-story,.trip-workspace>.route-summary,.trip-workspace>.section-label,.trip-workspace>.day{width:100%}
+ .atlas-home-hero{margin:0 -10px;min-height:330px;padding:36px 18px 100px;border-radius:0}.atlas-home-hero h1{font-size:32px}.atlas-motif{width:125%;right:-38%;height:170px}
+ .trip-cover{height:310px!important;border-radius:10px 10px 0 0}.trip-context-copy{left:17px;right:17px;bottom:18px}.trip-context-copy h1{font-size:27px}.trip-context-copy .trip-meta{font-size:10px;gap:8px}.tabs{overflow-x:auto;gap:21px;padding:0 12px;height:48px}.tabs a{font-size:11px;min-height:48px;padding-bottom:9px;white-space:nowrap}.trip-stats{gap:5px}.trip-stats>div{padding:10px 2px}.trip-stats strong{font-size:20px}.trip-stats span{font-size:9px}
+ .trip-context-compact{height:112px!important}.trip-context-compact .trip-context-copy h1{font-size:18px}.section-label{margin-top:13px!important}.day-title{padding:9px 10px}.day-num{font-size:20px}.timeline{margin-left:15px;margin-right:8px}.activity{grid-template-columns:43px minmax(0,1fr);padding-left:15px}.activity .itinerary-photo-frame{width:100%;max-width:360px}
+}
+
+/* ===== Share V5 — mirror approved private B/C visual language ===== */
+.share-body{max-width:1040px;margin:0 auto;padding:0 24px 48px;background:var(--bg-primary)}
+.share-header{min-height:66px;padding:10px 0;display:grid;grid-template-columns:1fr auto;align-items:center;border:0}
+.share-header .brand{font-size:17px;padding:0}.share-header .share-badge{font-size:11px;color:var(--text-muted);grid-column:1}.share-header .theme-control{grid-column:2;grid-row:1/3}
+.share-body .share-cover{width:100%;height:430px!important;margin:0!important;border-radius:12px 12px 0 0;position:relative;overflow:hidden;background:#171a18;border:1px solid var(--border);border-bottom:0}
+.share-body .share-cover .destination-slot,.share-body .share-cover .destination-slot picture{position:absolute;inset:0;width:100%;height:100%;display:block}
+.share-body .share-cover .destination-slot picture img,.share-body .share-cover .destination-slot>img{display:block;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:center 48%!important;margin:0!important;border-radius:0!important}
+.share-body .share-cover .destination-slot:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.03) 12%,rgba(0,0,0,.10) 48%,rgba(4,8,6,.76) 100%)}
+.share-body .share-cover .trip-context-copy{position:absolute;z-index:2;left:28px;right:28px;bottom:25px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.38);width:auto;margin:0;padding:0;background:none}
+.share-body .share-cover .eyebrow{display:none}.share-body .share-cover h1{font-size:clamp(34px,4vw,48px);font-weight:700;letter-spacing:-1.7px;line-height:1.08;margin:0 0 8px;color:#fff}.share-body .share-cover h1>span{display:inline}
+.share-body .share-cover .trip-meta{font-size:13px;color:rgba(255,255,255,.92);line-height:1.7}.share-body .share-cover .share-text-link{font-size:12px;color:#fff;margin-top:9px}
+.share-body>.tabs{width:100%;height:54px;margin:0 0 10px!important;padding:0 18px;gap:30px;border:1px solid var(--border);border-top:0;border-radius:0 0 10px 10px;background:var(--surface);box-shadow:none;position:sticky;top:0;z-index:6}
+.share-body>.tabs a{font-size:13px;min-height:54px;padding:0 1px 11px}.share-body>.tabs a.active{font-weight:600}
+.share-body .overview-story{border:0;background:transparent;padding:6px 0 14px!important;margin:0 0 18px!important}.share-body .share-intro{font-size:13px;line-height:1.7;max-width:760px;margin:0 0 12px}
+.share-body .trip-stats{gap:7px;margin:0 0 14px!important}.share-body .trip-stats>div{padding:12px 6px;background:var(--surface-elevated);border:1px solid var(--border);border-radius:8px;box-shadow:none}.share-body .trip-stats strong{font-size:24px;font-weight:650}.share-body .trip-stats span{font-size:11px;margin-top:3px}
+.destination-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:14px 0}.destination-strip figure{margin:0;min-width:0}.destination-strip .trip-photograph{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;margin:0;border-radius:7px}.destination-strip figcaption{font-size:11px;color:var(--muted);margin-top:5px}
+.share-body .route-summary{border:1px solid var(--border);background:var(--surface);border-radius:10px;padding:16px!important;margin:14px 0 0}.share-body .route-summary .eyebrow{font-size:9px}.share-body .route-summary h3{font-size:17px;margin:5px 0}.share-body .route-summary p{font-size:12px;line-height:1.6}
+.share-body #itinerary,.share-body #map,.share-body #prepare{margin-top:30px}.share-body .section-label{margin:0 0 7px!important;font-size:10px}
+.share-body .day-disclosure{margin:6px 0!important;border:1px solid var(--border)!important;border-radius:8px!important;background:var(--surface)!important;overflow:hidden}.share-body .day-disclosure>summary{padding:10px 12px;min-height:48px;gap:9px}.share-body .day-disclosure[open]>summary{border-bottom:1px solid var(--border)}
+.share-body .day-disclosure .day-num{font-size:21px;min-width:36px;font-weight:650}.share-body .day-date{font-size:11px;line-height:1.2}.share-body .day-title h3{font-size:13px;line-height:1.25;margin-top:2px}.share-body .day-count{font-size:10px;width:auto;white-space:nowrap}
+.share-body .day-disclosure .timeline{margin:0 12px 8px 20px;border-color:var(--border-strong)}.share-body .day-disclosure .activity{grid-template-columns:52px minmax(0,1fr);gap:9px;padding:10px 0 4px 19px}.share-body .day-disclosure .activity:before{top:16px;width:6px;height:6px;left:-3.5px}.share-body .activity time{font-size:10px}.share-body .activity h3{font-size:13px;line-height:1.3;margin:0 0 2px}.share-body .activity-meta{font-size:9px;margin:2px 0 4px}.share-body .activity p{font-size:10px;line-height:1.45;margin:4px 0}
+.share-body .activity .itinerary-photo-frame{display:block;width:min(100%,390px);aspect-ratio:16/9;overflow:hidden;border-radius:6px;margin:7px 0 5px}.share-body .activity .itinerary-photo-frame .trip-photograph{display:block;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;aspect-ratio:auto;object-fit:cover;margin:0;border-radius:0;transform:scale(1.025)}
+.share-body .map-heading h2{font-size:21px}.share-body .trip-map-canvas{height:520px}.share-body .trip-map-filters{gap:6px}.share-body .trip-map-filters .outline-button{font-size:12px;min-height:40px;padding:7px 12px}
+.share-body .travel-prepare .prepare-disclosure{background:var(--surface);border:1px solid var(--border);border-radius:8px;margin:7px 0;overflow:hidden}.share-body .travel-prepare .prepare-disclosure>summary{padding:13px 14px}.share-body .travel-prepare .prepare-disclosure>summary h2{font-size:20px}.share-body .travel-prepare .prepare-content{padding:0 14px 14px}.share-body .sample-banner{font-size:11px;color:var(--muted);margin:26px 0}
+:root[data-theme="dark"] .share-body .share-cover,:root[data-theme="dark"] .share-body>.tabs,:root[data-theme="dark"] .share-body .day-disclosure{background:#1a1e1c}:root[data-theme="dark"] .share-body .trip-stats>div{background:#202522}
+@media(max-width:700px){.share-body{padding:0 10px 30px}.share-header{min-height:58px;padding:8px 4px}.share-body .share-cover{height:310px!important;border-radius:10px 10px 0 0}.share-body .share-cover .trip-context-copy{left:17px;right:17px;bottom:18px}.share-body .share-cover h1{font-size:27px}.share-body .share-cover .trip-meta{font-size:10px}.share-body>.tabs{height:48px;padding:0 12px;gap:21px;overflow-x:auto}.share-body>.tabs a{font-size:11px;min-height:48px;padding-bottom:9px;white-space:nowrap}.share-body .trip-stats{gap:5px}.share-body .trip-stats>div{padding:10px 2px}.share-body .trip-stats strong{font-size:20px}.share-body .trip-stats span{font-size:9px}.destination-strip{grid-template-columns:repeat(4,1fr);gap:5px}.destination-strip figcaption{display:none}.share-body .day-disclosure .activity{grid-template-columns:43px minmax(0,1fr);padding-left:15px}.share-body .activity .itinerary-photo-frame{width:100%;max-width:360px}.share-body .trip-map-canvas{height:390px}}
+
+/* ===== Leo's Atlas V7 — desktop scale + unified typography ===== */
+:root{
+  --atlas-font:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei UI","Microsoft YaHei","PingFang SC",sans-serif;
+  font-family:var(--atlas-font);
+}
+html,body,button,input,select,textarea{font-family:var(--atlas-font)!important}
+body{font-size:16px}
+
+/* Share desktop: use the canvas instead of leaving a narrow mobile column in a wide page. */
+.share-body{max-width:1320px;padding:0 34px 72px}
+.share-header,.share-body #share-content{max-width:1180px;width:100%;margin-left:auto;margin-right:auto}
+.share-header .brand{font-size:18px}.share-header .share-badge{font-size:12px}
+.share-body .share-cover{height:440px!important}
+.share-body .share-cover h1{font-size:clamp(38px,3.5vw,52px);letter-spacing:-1.25px}
+.share-body .share-cover .trip-meta{font-size:14px}.share-body .share-cover .share-text-link{font-size:13px}
+.share-body>.tabs{height:58px;gap:38px}.share-body>.tabs a{font-size:15px;min-height:58px}
+
+/* Overview: larger reading scale and balanced two-column composition. */
+.share-body .overview-story{padding-top:18px!important}
+.share-body .share-intro{font-size:16px;line-height:1.75;max-width:720px;margin-bottom:22px}
+.share-body .trip-stats>div{padding:18px 10px 16px}.share-body .trip-stats strong{font-size:30px}.share-body .trip-stats span{font-size:12px}
+
+.share-body .route-summary{padding-top:22px!important}.share-body .route-summary .eyebrow{font-size:10px}.share-body .route-summary p:last-child{font-size:17px;line-height:1.7}
+
+/* Daily itinerary: desktop typography and image scale. */
+.share-body #itinerary{margin-top:40px;padding-top:22px}.share-body .section-label{font-size:11px;margin-bottom:12px!important}
+.share-body .day-disclosure>summary{padding:16px 18px;min-height:66px;align-items:center}
+.share-body .day-disclosure .day-num{font-size:28px;min-width:48px;font-weight:700;line-height:1}
+.share-body .day-date{font-size:13px;line-height:1.3}.share-body .day-title h3{font-size:17px;line-height:1.35;margin-top:3px}.share-body .day-count{font-size:12px}
+.share-body .day-disclosure .timeline{margin:0 18px 18px 28px;padding-bottom:8px}
+.share-body .day-disclosure .activity{grid-template-columns:72px minmax(0,1fr);gap:16px;padding:17px 0 11px 25px}
+.share-body .day-disclosure .activity:before{top:23px;width:7px;height:7px;left:-4px}
+.share-body .activity time{font-size:13px;font-weight:600}.share-body .activity h3{font-size:17px;line-height:1.4;margin:0 0 4px;font-weight:700}
+.share-body .activity-meta{font-size:12px;line-height:1.5;margin:3px 0 5px}.share-body .activity p{font-size:14px;line-height:1.6;margin:5px 0}
+.share-body .activity .itinerary-photo-frame{width:min(100%,600px);aspect-ratio:16/9;margin:12px 0 8px;border-radius:8px}
+.share-body .activity .itinerary-photo-frame .trip-photograph{transform:none}
+
+/* More deliberate tonal depth without turning the UI into card soup. */
+:root[data-theme="light"]{--bg-primary:#f3f0e8;--bg-secondary:#ebe7dc;--surface:#fbf9f3;--surface-elevated:#f7f3ea;--text-primary:#20231f;--text-secondary:#5f675f;--text-muted:#7b8179;--border:#d8d2c5;--border-strong:#c4bcad}
+:root[data-theme="dark"]{--bg-primary:#0d1110;--bg-secondary:#121715;--surface:#171c19;--surface-elevated:#1c231f;--text-primary:#f0f1eb;--text-secondary:#b9c1ba;--text-muted:#8f9a92;--border:#2a332e;--border-strong:#3c4841;--accent:#9eb4a8}
+:root[data-theme="light"] body,:root[data-theme="light"] .share-body{background:linear-gradient(180deg,#f7f4ed 0,#f3f0e8 260px,#efece4 100%)}
+:root[data-theme="dark"] body,:root[data-theme="dark"] .share-body{background:linear-gradient(180deg,#101513 0,#0d1110 300px,#0a0e0d 100%)}
+
+/* Keep mobile compact, but not microscopic. */
+@media(max-width:760px){
+ .share-body{padding:0 12px 38px}.share-body .share-cover{height:320px!important}.share-body .share-cover h1{font-size:29px}.share-body .share-cover .trip-meta{font-size:11px}
+ .share-body>.tabs{height:50px;gap:24px}.share-body>.tabs a{font-size:12px;min-height:50px}
+ .share-body .share-intro{font-size:14px}.share-body .trip-stats strong{font-size:23px}.share-body .trip-stats span{font-size:10px}
+ .share-body .route-summary p:last-child{font-size:13px}
+ .share-body .day-disclosure>summary{min-height:56px;padding:12px 0}.share-body .day-disclosure .day-num{font-size:23px;min-width:40px}.share-body .day-date{font-size:11px}.share-body .day-title h3{font-size:14px}.share-body .day-count{font-size:10px}
+ .share-body .day-disclosure .activity{grid-template-columns:48px minmax(0,1fr);gap:10px;padding:12px 0 7px 17px}.share-body .activity time{font-size:11px}.share-body .activity h3{font-size:14px}.share-body .activity-meta{font-size:10px}.share-body .activity p{font-size:12px}
+ .share-body .activity .itinerary-photo-frame{width:100%;max-width:460px}
+}
+
+/* ===== Leo's Atlas V8 — semantic Atlas home hero + archive refinement ===== */
+.atlas-home-hero{background:var(--surface)!important;isolation:isolate}
+.atlas-home-hero:before{content:""!important;position:absolute!important;inset:0!important;background:none!important;opacity:1!important;pointer-events:none!important}
+.atlas-home-hero:after{content:""!important;position:absolute!important;inset:0!important;width:auto!important;height:auto!important;right:0!important;top:0!important;background:url("../assets/atlas-home-bg.png") center/cover no-repeat!important;color:var(--accent);opacity:.48!important;mask-image:linear-gradient(90deg,transparent 3%,#000 26%,#000 100%)!important;-webkit-mask-image:linear-gradient(90deg,transparent 3%,#000 26%,#000 100%)!important;pointer-events:none!important}
+.atlas-home-hero .atlas-motif{display:none!important}
+:root[data-theme="light"] .atlas-home-hero:after{opacity:.34!important}
+:root[data-theme="dark"] .atlas-home-hero:after{opacity:.40!important}
+.home-trips .archive-trip{grid-template-columns:150px minmax(0,1fr) auto 24px!important;padding:12px!important;min-height:104px!important}
+.home-trips .archive-trip .trip-image-slot{height:80px!important;border-radius:8px!important;overflow:hidden!important}
+.home-trips .archive-trip h2{font-size:18px!important;line-height:1.25!important}
+.home-trips .archive-trip p{font-size:13px!important;line-height:1.55!important}
+.home-trips .archive-trip .row-date{font-size:12px!important}
+@media(max-width:700px){.atlas-home-hero:after{background-position:58% center!important;opacity:.28!important}.home-trips .archive-trip{grid-template-columns:92px minmax(0,1fr) 20px!important;min-height:84px!important}.home-trips .archive-trip .trip-image-slot{height:64px!important}}
+
+/* V9: the external atlas background replaces the legacy inline decorative motif. */
+.atlas-home-hero .atlas-motif{display:none!important}
+
+/* V10 �� Home hero photo tuning */
+:root[data-theme="dark"] .atlas-home-hero:after{
+  opacity:.52!important;
+  filter:saturate(.72) brightness(1.10) contrast(.94)!important;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.28) 17%,#000 42%,#000 100%)!important;
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.28) 17%,#000 42%,#000 100%)!important;
+}

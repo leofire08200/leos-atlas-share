@@ -17,44 +17,13 @@ document.querySelector('.share-header').insertAdjacentHTML('beforeend',themeCont
 window.AtlasTheme?.refreshControls();
 bindPlaceImages(root);
 
-function bindShareNavigation(){
+function updateShareNavigation(){
   const nav=root.querySelector('.tabs');if(!nav)return;
   const links=[...nav.querySelectorAll('a')];
-  const sections=links.map(link=>root.querySelector(link.hash));
-  let active=null,frame=0,centerRequested=false,readingLine=0;
-  function update(){
-    frame=0;
-    let index=0;
-    for(let i=0;i<sections.length;i++)if(sections[i]?.getBoundingClientRect().top<=readingLine)index=i;
-    const next=links[index],changed=next!==active;
-    if(changed){
-      active=next;
-      for(const link of links){link.classList.toggle('active',link===active);if(link===active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');}
-    }
-    // Recenter only when the selected tab changes or the viewport resizes.
-    if(changed||centerRequested)nav.scrollLeft=active.offsetLeft-nav.offsetLeft-(nav.clientWidth-active.offsetWidth)/2;
-    centerRequested=false;
-  }
-  function schedule(){if(!frame)frame=requestAnimationFrame(update);}
-  function resize(){
-    const navHeight=Math.ceil(nav.getBoundingClientRect().height);
-    const pagePadding=parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)||0;
-    const margin=Math.max(0,navHeight+12-pagePadding);
-    readingLine=Math.max(navHeight,pagePadding)+24;
-    for(const section of sections)if(section)section.style.scrollMarginTop=margin+'px';
-    centerRequested=true;schedule();
-  }
-  function followHash(){
-    const index=links.findIndex(link=>link.hash===location.hash);
-    if(index>=0)sections[index]?.scrollIntoView({block:'start',behavior:'auto'});
-    schedule();
-  }
-  window.addEventListener('scroll',schedule,{passive:true});
-  window.addEventListener('resize',resize);
-  window.addEventListener('hashchange',followHash);
-  root.addEventListener('toggle',schedule,true);
-  root.addEventListener('load',schedule,true);
-  if(typeof ResizeObserver!=='undefined')new ResizeObserver(schedule).observe(root);
-  resize();followHash();
+  const active=links.find(a=>a.hash===location.hash)??links[0];
+  for(const link of links){link.classList.toggle('active',link===active);if(link===active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');}
+  nav.scrollLeft=active.offsetLeft-nav.offsetLeft-(nav.clientWidth-active.offsetWidth)/2;
 }
-bindShareNavigation();
+window.addEventListener('hashchange',updateShareNavigation);
+window.addEventListener('resize',updateShareNavigation);
+updateShareNavigation();
