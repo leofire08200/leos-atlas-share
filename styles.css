@@ -134,7 +134,7 @@ button,summary{touch-action:manipulation}
 .share-header .share-badge{grid-column:1;grid-row:2;font-size:12px;margin-top:4px;letter-spacing:.2px;text-align:left}
 .share-header .theme-control{grid-column:2;grid-row:1 / 3}
 .share-cover{margin-top:26px}.share-body .overview-story{max-width:none}
-.share-body .overview-story h2{font-family:Georgia,'Songti SC',SimSun,serif;font-size:27px;letter-spacing:0;font-weight:500}
+.share-body .overview-story h2{font-size:27px;letter-spacing:0;font-weight:500}
 .share-body .tabs{margin:18px 0 25px}.share-body #itinerary,.share-body #prepare{margin-top:40px}
 .share-body .section-label{font-size:12px;letter-spacing:.4px}
 .trip-map-filters{display:flex!important;gap:6px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;padding:2px 0 6px;margin-bottom:12px}
@@ -291,8 +291,8 @@ main{padding-left:clamp(34px,4vw,64px);padding-right:clamp(34px,4vw,64px)}
 .share-body .share-cover .trip-context-copy{position:absolute;z-index:2;left:28px;right:28px;bottom:25px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.38);width:auto;margin:0;padding:0;background:none}
 .share-body .share-cover .eyebrow{display:none}.share-body .share-cover h1{font-size:clamp(34px,4vw,48px);font-weight:700;letter-spacing:-1.7px;line-height:1.08;margin:0 0 8px;color:#fff}.share-body .share-cover h1>span{display:inline}
 .share-body .share-cover .trip-meta{font-size:13px;color:rgba(255,255,255,.92);line-height:1.7}.share-body .share-cover .share-text-link{font-size:12px;color:#fff;margin-top:9px}
-.share-body>.tabs{width:100%;height:54px;margin:0 0 10px!important;padding:0 18px;gap:30px;border:1px solid var(--border);border-top:0;border-radius:0 0 10px 10px;background:var(--surface);box-shadow:none;position:sticky;top:0;z-index:6}
-.share-body>.tabs a{font-size:13px;min-height:54px;padding:0 1px 11px}.share-body>.tabs a.active{font-weight:600}
+.share-body #share-content>.tabs{width:100%;height:54px;margin:0 0 10px!important;padding:0 18px;gap:30px;border:1px solid var(--border);border-top:0;border-radius:0 0 10px 10px;background:var(--surface);box-shadow:none;position:sticky;top:0;z-index:6}
+.share-body #share-content>.tabs a{font-size:13px;min-height:54px;padding:0 1px 11px}.share-body #share-content>.tabs a.active{font-weight:600}
 .share-body .overview-story{border:0;background:transparent;padding:6px 0 14px!important;margin:0 0 18px!important}.share-body .share-intro{font-size:13px;line-height:1.7;max-width:760px;margin:0 0 12px}
 .share-body .trip-stats{gap:7px;margin:0 0 14px!important}.share-body .trip-stats>div{padding:12px 6px;background:var(--surface-elevated);border:1px solid var(--border);border-radius:8px;box-shadow:none}.share-body .trip-stats strong{font-size:24px;font-weight:650}.share-body .trip-stats span{font-size:11px;margin-top:3px}
 .destination-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:14px 0}.destination-strip figure{margin:0;min-width:0}.destination-strip .trip-photograph{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;margin:0;border-radius:7px}.destination-strip figcaption{font-size:11px;color:var(--muted);margin-top:5px}
@@ -304,8 +304,8 @@ main{padding-left:clamp(34px,4vw,64px);padding-right:clamp(34px,4vw,64px)}
 .share-body .activity .itinerary-photo-frame{display:block;width:min(100%,390px);aspect-ratio:16/9;overflow:hidden;border-radius:6px;margin:7px 0 5px}.share-body .activity .itinerary-photo-frame .trip-photograph{display:block;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;aspect-ratio:auto;object-fit:cover;margin:0;border-radius:0;transform:scale(1.025)}
 .share-body .map-heading h2{font-size:21px}.share-body .trip-map-canvas{height:520px}.share-body .trip-map-filters{gap:6px}.share-body .trip-map-filters .outline-button{font-size:12px;min-height:40px;padding:7px 12px}
 .share-body .travel-prepare .prepare-disclosure{background:var(--surface);border:1px solid var(--border);border-radius:8px;margin:7px 0;overflow:hidden}.share-body .travel-prepare .prepare-disclosure>summary{padding:13px 14px}.share-body .travel-prepare .prepare-disclosure>summary h2{font-size:20px}.share-body .travel-prepare .prepare-content{padding:0 14px 14px}.share-body .sample-banner{font-size:11px;color:var(--muted);margin:26px 0}
-:root[data-theme="dark"] .share-body .share-cover,:root[data-theme="dark"] .share-body>.tabs,:root[data-theme="dark"] .share-body .day-disclosure{background:#1a1e1c}:root[data-theme="dark"] .share-body .trip-stats>div{background:#202522}
-@media(max-width:700px){.share-body{padding:0 10px 30px}.share-header{min-height:58px;padding:8px 4px}.share-body .share-cover{height:310px!important;border-radius:10px 10px 0 0}.share-body .share-cover .trip-context-copy{left:17px;right:17px;bottom:18px}.share-body .share-cover h1{font-size:27px}.share-body .share-cover .trip-meta{font-size:10px}.share-body>.tabs{height:48px;padding:0 12px;gap:21px;overflow-x:auto}.share-body>.tabs a{font-size:11px;min-height:48px;padding-bottom:9px;white-space:nowrap}.share-body .trip-stats{gap:5px}.share-body .trip-stats>div{padding:10px 2px}.share-body .trip-stats strong{font-size:20px}.share-body .trip-stats span{font-size:9px}.destination-strip{grid-template-columns:repeat(4,1fr);gap:5px}.destination-strip figcaption{display:none}.share-body .day-disclosure .activity{grid-template-columns:43px minmax(0,1fr);padding-left:15px}.share-body .activity .itinerary-photo-frame{width:100%;max-width:360px}.share-body .trip-map-canvas{height:390px}}
+:root[data-theme="dark"] .share-body .share-cover,:root[data-theme="dark"] .share-body #share-content>.tabs,:root[data-theme="dark"] .share-body .day-disclosure{background:#1a1e1c}:root[data-theme="dark"] .share-body .trip-stats>div{background:#202522}
+@media(max-width:700px){.share-body{padding:0 10px 30px}.share-header{min-height:58px;padding:8px 4px}.share-body .share-cover{height:310px!important;border-radius:10px 10px 0 0}.share-body .share-cover .trip-context-copy{left:17px;right:17px;bottom:18px}.share-body .share-cover h1{font-size:27px}.share-body .share-cover .trip-meta{font-size:10px}.share-body #share-content>.tabs{height:48px;padding:0 12px;gap:21px;overflow-x:auto}.share-body #share-content>.tabs a{font-size:11px;min-height:48px;padding-bottom:9px;white-space:nowrap}.share-body .trip-stats{gap:5px}.share-body .trip-stats>div{padding:10px 2px}.share-body .trip-stats strong{font-size:20px}.share-body .trip-stats span{font-size:9px}.destination-strip{grid-template-columns:repeat(4,1fr);gap:5px}.destination-strip figcaption{display:none}.share-body .day-disclosure .activity{grid-template-columns:43px minmax(0,1fr);padding-left:15px}.share-body .activity .itinerary-photo-frame{width:100%;max-width:360px}.share-body .trip-map-canvas{height:390px}}
 
 /* ===== Leo's Atlas V7 — desktop scale + unified typography ===== */
 :root{
@@ -322,7 +322,7 @@ body{font-size:16px}
 .share-body .share-cover{height:440px!important}
 .share-body .share-cover h1{font-size:clamp(38px,3.5vw,52px);letter-spacing:-1.25px}
 .share-body .share-cover .trip-meta{font-size:14px}.share-body .share-cover .share-text-link{font-size:13px}
-.share-body>.tabs{height:58px;gap:38px}.share-body>.tabs a{font-size:15px;min-height:58px}
+.share-body #share-content>.tabs{height:58px;gap:38px}.share-body #share-content>.tabs a{font-size:15px;min-height:58px}
 
 /* Overview: larger reading scale and balanced two-column composition. */
 .share-body .overview-story{padding-top:18px!important}
@@ -353,7 +353,7 @@ body{font-size:16px}
 /* Keep mobile compact, but not microscopic. */
 @media(max-width:760px){
  .share-body{padding:0 12px 38px}.share-body .share-cover{height:320px!important}.share-body .share-cover h1{font-size:29px}.share-body .share-cover .trip-meta{font-size:11px}
- .share-body>.tabs{height:50px;gap:24px}.share-body>.tabs a{font-size:12px;min-height:50px}
+ .share-body #share-content>.tabs{height:50px;gap:24px}.share-body #share-content>.tabs a{font-size:12px;min-height:50px}
  .share-body .share-intro{font-size:14px}.share-body .trip-stats strong{font-size:23px}.share-body .trip-stats span{font-size:10px}
  .share-body .route-summary p:last-child{font-size:13px}
  .share-body .day-disclosure>summary{min-height:56px;padding:12px 0}.share-body .day-disclosure .day-num{font-size:23px;min-width:40px}.share-body .day-date{font-size:11px}.share-body .day-title h3{font-size:14px}.share-body .day-count{font-size:10px}
